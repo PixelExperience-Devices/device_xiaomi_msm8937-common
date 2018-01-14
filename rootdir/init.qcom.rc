@@ -627,6 +627,11 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
 
+service baseband-sh /vendor/bin/init.baseband.sh
+    class late_start
+    user root
+    oneshot
+
 on property:dev.bootcomplete=1
     restart ril-daemon
     swapon_all /vendor/etc/fstab.qcom
