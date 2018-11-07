@@ -90,16 +90,6 @@ BOARD_USES_QCNE := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Dexpreopt
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-
 # Display
 TARGET_SCREEN_DENSITY := 290
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
