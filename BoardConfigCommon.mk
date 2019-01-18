@@ -104,6 +104,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
+TARGET_SCREEN_DENSITY := 290
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true
 TARGET_USES_GRALLOC1 := true
