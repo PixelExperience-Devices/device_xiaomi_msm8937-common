@@ -438,4 +438,93 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
            <instance>wifiStats</instance>
        </interface>
    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.ir</name>
+        <version>1.0</version>
+        <interface>
+            <name>IConsumerIr</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.biometrics.fingerprint</name>
+        <impl level="generic"></impl>
+        <version>2.1</version>
+        <interface>
+            <name>IBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>com.fingerprints.extension</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFingerprintAuthenticator</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintCalibration</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintEngineering</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintNavigation</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintRecalibration</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSenseTouch</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSensorTest</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.goodix.hardware.fingerprint</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGoodixBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.goodix.hardware.fingerprintextension</name>
+        <version>1.0</version>
+        <interface>
+            <name>IGoodixBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.mlipay</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMlipayService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.lineage.livedisplay</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IDisplayModes</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IPictureAdjustment</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
