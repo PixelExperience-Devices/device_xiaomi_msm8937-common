@@ -34,5 +34,8 @@
 # Sensors
 /(mnt/vendor)/persist/sensors(/.*)?                                     u:object_r:persist_sensors_file:s0
 
+# Shell Script
+/(vendor|system/vendor)/bin/init\.baseband\.sh          u:object_r:init_baseband_exec:s0
+
 # Time
 /system/bin/move_time_data\.sh            u:object_r:move-time-data-sh_exec:s0
