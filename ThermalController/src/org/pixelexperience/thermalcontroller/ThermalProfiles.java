@@ -23,44 +23,37 @@ import java.io.FileWriter;
 
 public class ThermalProfiles {
     public static final int MODE_DEFAULT = 0;
-    public static final int MODE_DIALER = 8;
     public static final int MODE_GAME = 9;
-    public static final int MODE_PERFORMANCE = 10;
-    public static final int MODE_BROWSER = 11;
-    public static final int MODE_CAMERA = 12;
     public static final int MODE_PUBG = 13;
-    public static final int MODE_VIDEO = 14;
+    public static final int MODE_HIGH = 1;
+    public static final int MODE_CAMERA = 12;
+    public static final int MODE_STUDIO = 33;
 
-    public static final int supportedProfiles[] = {MODE_DEFAULT, MODE_DIALER, MODE_GAME,
-        MODE_PERFORMANCE, MODE_BROWSER, MODE_CAMERA, MODE_PUBG, MODE_VIDEO};
+    public static final int supportedProfiles[] = {MODE_DEFAULT, MODE_GAME,
+        MODE_PUBG, MODE_HIGH, MODE_CAMERA, MODE_STUDIO};
 
     private static final String TAG = "ThermalController:ThermalProfiles";
 
     public static int getDefaultProfileId(String packageName) {
         switch (packageName) {
-            case "com.android.dialer":
-            case "com.google.android.dialer":
-                return MODE_DIALER;
             case "com.antutu.ABenchMark":
             case "com.futuremark.dmandroid.application":
             case "com.primatelabs.geekbench":
-                return MODE_PERFORMANCE;
+                return MODE_HIGH;
+            case "com.google.android.youtube":
+            case "com.netflix.mediaclient":
+            case "com.google.android.videos":
+            case "com.amazon.avod.thirdpartyclient":
+            case "com.google.android.apps.youtube.kids":
+            case "org.lineageos.jelly":
+            case "com.android.chrome":
+                return MODE_STUDIO;
             case "com.tencent.ig":
             case "com.dts.freefireth":
             case "com.epicgames.fortnite":
             case "com.gameloft.android.ANMP.GloftA8HM":
             case "com.gameloft.android.ANMP.GloftA9HM":
                 return MODE_GAME;
-            case "com.google.android.youtube":
-            case "com.netflix.mediaclient":
-            case "com.google.android.videos":
-            case "com.amazon.avod.thirdpartyclient":
-            case "com.google.android.apps.youtube.kids":
-                return MODE_VIDEO;
-            case "org.lineageos.jelly":
-            case "com.android.chrome":
-            case "com.UCMobile.intl":
-                return MODE_BROWSER;
             case "org.codeaurora.snapcam":
             case "com.android.camera":
             case "com.android.gallery3d":
