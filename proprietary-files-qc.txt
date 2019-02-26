@@ -593,7 +593,7 @@ vendor/bin/qti|28c5da423ba2e0c7873c24e6eca4bb4db7f41fe8
 vendor/bin/rmt_storage|68113b986cef176c9d808fb7fb870ed61d4846bd
 vendor/bin/tftp_server|05a9c0e0e691e534e703bded4a99083d25a26ebb
 vendor/etc/data/dsi_config.xml|2ca4b377905d97c38fdc58765ac9d1da99ef7385
-vendor/etc/data/netmgr_config.xml|cbc0330402aea93e8dd800a8ac3550ac3b1757e0
+vendor/etc/data/netmgr_config.xml|eb70c72162354651972044ffc2a697950a9fd6cf
 vendor/lib/libmdmdetect.so|11faf5c9ac48284dfe3a965d8a2309014d81a68d
 vendor/lib64/libconfigdb.so|1fa77478a72cf4152c1027fd40ee9a58a0ba89aa
 vendor/lib64/liblqe.so|63ed946d00ed73664410041e3e8fa8c2f5cbeeb6
