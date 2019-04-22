@@ -8,5 +8,8 @@ allow mm-qcamerad sensorservice_service:service_manager find;
 allow mm-qcamerad sysfs:file r_file_perms;
 allow mm-qcamerad sysfs_graphics:file r_file_perms;
 
+# Allow to read camera prop
+get_prop(mm-qcamerad, camera_prop)
+
 binder_call(mm-qcamerad, servicemanager)
 binder_use(mm-qcamerad)
