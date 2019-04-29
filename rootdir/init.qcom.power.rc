@@ -1,7 +1,8 @@
 on enable-low-power
     start qcom-post-boot
 
-    write /proc/sys/vm/swappiness 100
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 60
     swapon_all /vendor/etc/fstab.qcom
 
     # Work against lineage-governor.rc
