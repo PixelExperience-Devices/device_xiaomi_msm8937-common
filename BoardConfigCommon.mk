@@ -29,6 +29,9 @@ TARGET_KERNEL_SOURCE 		:= kernel/xiaomi/msm8937
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_EXFAT_DRIVER		:= sdfat
 
+# Use 'android' instead of 'androidkernel'
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
 # Architecture
 TARGET_ARCH 	    	:= arm64
 TARGET_ARCH_VARIANT 	:= armv8-a
