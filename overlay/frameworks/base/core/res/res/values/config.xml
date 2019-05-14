@@ -613,4 +613,22 @@
 
     <!-- Component name of the default wallpaper. This will be ImageWallpaper if not specified -->
     <string name="default_wallpaper_component" translatable="false">com.breel.wallpapers18/com.breel.wallpapers18.soundviz.wallpaper.variations.SoundVizWallpaperV2</string>
+
+    <!-- Should the pinner service pin the Home application? -->
+    <bool name="config_pinnerHomeApp">true</bool>
+
+    <!-- Fix for Goodix Reset on Every Reboot -->
+    <bool name="config_cleanupUnusedFingerprints">false</bool>
+
+    <!-- Whether the device has outdated qti-telephony-common.jar -->
+    <bool name="config_oldQtiTelephony">false</bool>
+
+    <!-- Whether to enable Qualcomm Boost Framework -->
+    <bool name="config_enableQcCpuBoost">true</bool>
+
+    <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
+    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
+
+    <!-- Disable button backlight settings. -->
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
 </resources>
