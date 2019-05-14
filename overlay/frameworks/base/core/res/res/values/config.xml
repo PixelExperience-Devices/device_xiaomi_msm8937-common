@@ -629,4 +629,7 @@
 
     <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
+
+    <!-- Disable button backlight settings. -->
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
 </resources>
