@@ -624,4 +624,7 @@
 
     <!-- Whether to enable Qualcomm Boost Framework -->
     <bool name="config_enableQcCpuBoost">true</bool>
+
+    <!-- Disable button backlight settings. -->
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
 </resources>
