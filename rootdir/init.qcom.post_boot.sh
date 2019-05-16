@@ -2131,6 +2131,16 @@ case "$target" in
                 echo 93 > /proc/sys/kernel/sched_upmigrate
                 echo 83 > /proc/sys/kernel/sched_downmigrate
 
+                # Enable core control for Kernel 3.18
+                if [ $KernelVersionA -eq 3 ] && [ $KernelVersionB -eq 18 ]; then
+                    echo 2 > /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
+                    echo 4 > /sys/devices/system/cpu/cpu0/core_ctl/max_cpus
+                    echo 68 > /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres
+                    echo 40 > /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres
+                    echo 100 > /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms
+                    echo 1 > /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster
+                fi
+
                 # re-enable thermal core_control
                 echo 1 > /sys/module/msm_thermal/core_control/enabled
 
