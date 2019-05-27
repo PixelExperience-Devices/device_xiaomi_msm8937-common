@@ -636,4 +636,7 @@
 
     <!-- Disable button backlight settings. -->
     <integer name="config_buttonBrightnessSettingDefault">0</integer>
+
+    <!-- Show battery fully charged notification -->
+    <bool name="config_showBatteryFullyChargedNotification">true</bool>
 </resources>
