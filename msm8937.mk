@@ -399,6 +399,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndk-sp
 
+# Wallpapers
+PRODUCT_PACKAGES += \
+    WallpapersBReel2018
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
