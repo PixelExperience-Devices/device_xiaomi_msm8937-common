@@ -1,7 +1,14 @@
 [
   {
-    "repository"   : "kernel_xiaomi_msm8937",
-    "target_path"  : "kernel/xiaomi/msm8937"
+    "remote"       : "github",
+    "repository"   : "HarukeyUA/kernel_xiaomi_msm8937",
+    "target_path"  : "kernel/xiaomi/msm8937",
+    "branch"       : "DarkPhoenix-60fps"
+  },
+  {
+    "remote"       : "github",
+    "repository"   : "HarukeyUA/proprietary_vendor_xiaomi",
+    "target_path"  : "vendor/xiaomi",
   },
   {
     "repository"   : "LineageOS/android_packages_resources_devicesettings",
@@ -10,8 +17,9 @@
     "remote"       : "github"
   },
   {
-    "remote"       : "gitlub"
+    "remote"       : "gitlab",
     "repository"   : "packages_apps_WallpapersBReel2018",
     "target_path"  : "packages/apps/WallpapersBReel2018",
     "branch"       : "pie"
   }
+]
