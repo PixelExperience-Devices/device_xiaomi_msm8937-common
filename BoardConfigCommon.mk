@@ -94,6 +94,7 @@ AUDIO_FEATURE_ENABLED_WMA_OFFLOAD := false
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_APE_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+AUDIO_FEATURE_ENABLED_SND_MONITOR := true
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 AUDIO_FEATURE_ENABLED_SSR := false
@@ -219,8 +220,11 @@ TARGET_USES_OLD_MNC_FORMAT := true
 # Recovery
 TARGET_RECOVERY_FSTAB 		 := $(VENDOR_PATH)/rootdir/fstab.qcom
 
+# F
+$(shell rm -rf hardware/qcom/display-caf/msm8996/liblight)
+$(shell rm -rf vendor/qcom/common)
+
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Wi-Fi
