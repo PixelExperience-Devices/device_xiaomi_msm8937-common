@@ -1,15 +1,15 @@
 [
   {
-    "remote"       : "github",
-    "repository"   : "HarukeyUA/android_kernel_xiaomi_santoni",
+    "remote"       : "pixel-devices",
+    "repository"   : "kernel_xiaomi_santoni",
     "target_path"  : "kernel/xiaomi/msm8937",
-    "branch"       : "DarkPhoenix-60fps"
+    "branch"       : "pie"
   },
   {
-    "remote"       : "github",
-    "repository"   : "HarukeyUA/proprietary_vendor_xiaomi",
+    "remote"       : "pixel-devices",
+    "repository"   : "vendor_xiaomi_santoni",
     "target_path"  : "vendor/xiaomi",
-    "branch"       : "lineage-16.0"
+    "branch"       : "pie"
   },
   {
     "repository"   : "LineageOS/android_packages_resources_devicesettings",
