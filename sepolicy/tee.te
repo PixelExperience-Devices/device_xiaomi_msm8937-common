@@ -10,3 +10,4 @@ allow tee system_data_file:dir create_dir_perms;
 # Use system data for pre-P first SDK API level
 allow tee fingerprintd_data_file:dir rw_dir_perms;
 allow tee fingerprintd_data_file:file create_file_perms;
+allow tee tmpfs:dir r_dir_perms;
