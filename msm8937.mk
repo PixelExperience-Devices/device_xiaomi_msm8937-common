@@ -412,5 +412,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
+# ARCore
+PRODUCT_PACKAGES += \
+    arcore
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.calibration_cad=/system/etc/calibration_cad.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/calibration_cad.xml:system/etc/calibration_cad.xml
+
 # Inherit common proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/msm8937-common/msm8937-common-vendor.mk)
