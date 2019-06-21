@@ -132,6 +132,13 @@ ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 #system props for time-services
 persist.timed.enable=true
 
+#
+# system property determining camera HAL to be used for a Video call
+#
+# 1 is camera1
+# 2 or anything else is camera2
+persist.radio.VT_CAM_INTERFACE=2
+
 # IMS
 service.qti.ims.enabled=1
 persist.radio.ims.cmcc=true
