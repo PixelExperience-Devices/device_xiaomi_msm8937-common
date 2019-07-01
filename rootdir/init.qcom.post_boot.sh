@@ -45,6 +45,7 @@ function 8917_sched_dcvs_eas()
     echo 1 > /sys/devices/system/cpu/cpu0/online
     echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     echo 0 > /sys/devices/system/cpu/cpufreq/schedutil/rate_limit_us
+    echo 1 > /sys/devices/system/cpu/cpufreq/schedutil/iowait_boost_enable
     #set the hispeed_freq
     echo 1094400 > /sys/devices/system/cpu/cpufreq/schedutil/hispeed_freq
     #default value for hispeed_load is 90, for 8917 it should be 85
