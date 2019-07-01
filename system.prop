@@ -10,6 +10,7 @@ ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.fluence.speaker=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
 audio.offload.disable=true
 vendor.audio.tunnel.encode=false
 vendor.audio.offload.buffer.size.kb=64
