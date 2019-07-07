@@ -29,7 +29,7 @@ TARGET_KERNEL_SOURCE 		:= kernel/xiaomi/msm8937
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_EXFAT_DRIVER		:= sdfat
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := 9.0.3
+TARGET_KERNEL_CLANG_VERSION := 9.0.5
 
 # Use 'android' instead of 'androidkernel'
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
