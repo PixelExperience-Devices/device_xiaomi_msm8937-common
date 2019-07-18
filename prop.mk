@@ -126,6 +126,8 @@ ro.hwui.text_large_cache_height=1024
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
 av.debug.disable.pers.cache=1 \
+debug.stagefright.omx_default_rank.sw-audio=1 \
+debug.stagefright.omx_default_rank=0 \
 media.aac_51_output_enabled=true \
 media.msm8956hw=0 \
 media.stagefright.audio.sink=280 \
