@@ -208,11 +208,6 @@ int power_hint_override(power_hint_t hint, int data)
         SCHED_BOOST_ON_V3, 0x1,
     };
 
-    if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(data);
-        return HINT_HANDLED;
-    }
-
     // Skip other hints in high/low power mode
     if (current_power_profile == PROFILE_POWER_SAVE ||
             current_power_profile == PROFILE_HIGH_PERFORMANCE) {
