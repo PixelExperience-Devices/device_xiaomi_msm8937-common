@@ -2,3 +2,5 @@ allow thermal-engine sysfs:dir { open read };
 allow thermal-engine property_socket:sock_file { write };
 allow thermal-engine init:unix_stream_socket {connectto };
 
+allow thermal-engine sysfs_batteryinfo:dir search;
+allow thermal-engine sysfs_batteryinfo:file { open read write };
