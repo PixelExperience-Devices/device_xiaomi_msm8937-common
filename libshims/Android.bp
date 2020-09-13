@@ -1,0 +1,17 @@
+// libandroid
+cc_library_shared {
+    name: "libandroid_shim",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libandroid_shim.cpp",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libutils",
+    ],
+}
