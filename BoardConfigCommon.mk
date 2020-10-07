@@ -48,6 +48,9 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 ifeq ($(TARGET_KERNEL_VERSION),4.9)
 BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true
 TARGET_KERNEL_CLANG_COMPILE := true
+else ifeq ($(TARGET_KERNEL_VERSION),3.18)
+TARGET_KERNEL_ARCH := arm64
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 endif
 
 # ANT
