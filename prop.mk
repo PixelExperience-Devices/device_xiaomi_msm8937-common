@@ -1,5 +1,5 @@
 #
-# system.prop for msm8953-common
+# system.prop for msm8937-common
 #
 
 # Audio
