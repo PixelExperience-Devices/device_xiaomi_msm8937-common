@@ -109,6 +109,20 @@ persist.gps.qc_nlp_in_use=1 \
 persist.loc.nlp_name=com.qualcomm.location \
 ro.gps.agps_provider=1
 
+# HWUI
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.hwui.texture_cache_size=72 \
+ro.hwui.layer_cache_size=48 \
+ro.hwui.r_buffer_cache_size=8 \
+ro.hwui.path_cache_size=32 \
+ro.hwui.gradient_cache_size=1 \
+ro.hwui.drop_shadow_cache_size=6 \
+ro.hwui.texture_cache_flushrate=0.4 \
+ro.hwui.text_small_cache_width=1024 \
+ro.hwui.text_small_cache_height=1024 \
+ro.hwui.text_large_cache_width=2048 \
+ro.hwui.text_large_cache_height=1024
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
 av.debug.disable.pers.cache=1 \
@@ -124,7 +138,8 @@ vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
 vendor.vidc.enc.disable_bframes=1 \
-vendor.video.disable.ubwc=1
+vendor.video.disable.ubwc=1 \
+vendor.vidc.enc.narrow.searchrange=1
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -168,7 +183,7 @@ ril.subscription.types=NV,RUIM \
 rild.libargs=-d/dev/smd0 \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
 ro.telephony.call_ring.multiple=false \
-ro.telephony.default_network=22,20 \
+ro.telephony.default_network=22,22 \
 service.qti.ims.enabled=1
 
 # Time Services
@@ -179,6 +194,14 @@ persist.timed.enable=true
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
 
+# Trim
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.qti.sys.fw.use_trim_settings=true \
+ro.vendor.qti.sys.fw.empty_app_percent=50 \
+ro.vendor.qti.sys.fw.trim_empty_percent=100 \
+ro.vendor.qti.sys.fw.trim_cache_percent=100 \
+ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
+
 # UI
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.use_fifo_ui=1
@@ -186,6 +209,10 @@ sys.use_fifo_ui=1
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.usb.config.extra=none
+
+# Voltage
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.cutoff_voltage_mv=3200
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
