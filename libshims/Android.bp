@@ -41,3 +41,21 @@ cc_library_shared {
 
     compile_multilib: "32",
 }
+
+// libbinder
+cc_library_shared {
+    name: "libbinder_shim",
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "libbinder_shim.c",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wextra",
+        "-Wall",
+    ],
+    shared_libs: [
+        "libutils",
+    ],
+}
