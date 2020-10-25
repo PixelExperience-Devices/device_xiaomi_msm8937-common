@@ -1,5 +1,5 @@
 #
-# system.prop for ulysse
+# system.prop for msm8937-common
 #
 
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
