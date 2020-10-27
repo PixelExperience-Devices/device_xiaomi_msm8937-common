@@ -211,6 +211,10 @@ on boot
 # access permission for wlan
     chown system system /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin
 
+# LED IR
+    chown system system /sys/class/leds/infrared/transmit
+    chown system system /sys/class/leds/infrared/brightness
+
 #USB controller configuration
     write /sys/module/g_android/parameters/mtp_rx_req_len 131072
     setprop vendor.usb.rndis.func.name "rndis"
