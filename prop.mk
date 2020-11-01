@@ -70,7 +70,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2
 
 # Charger
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.charger.disable_init_blank=true \
     ro.charger.enable_suspend=true
 
@@ -201,8 +201,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.radio.aosp_usr_pref_sel=true \
     persist.radio.multisim.config=dsds \
+    persist.vendor.radio.aosp_usr_pref_sel=true \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.hw_mbn_update=0 \
