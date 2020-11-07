@@ -1,0 +1,2 @@
+allow charger charger_res:file r_file_perms;
+allow charger charger_res:dir r_dir_perms;

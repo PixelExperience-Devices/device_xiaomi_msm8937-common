@@ -27,6 +27,9 @@
 # Location
 /data/vendor/location/xtra/socket_hal_xtra    u:object_r:location_socket:s0
 
+# Misc
+/system/res/images(/.*)?	u:object_r:charger_res:s0
+
 # Rild
 /(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
 
