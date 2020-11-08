@@ -10,3 +10,6 @@ allow init vendor_file:file mounton;
 
 # Allow init to bind mount vendor configs file
 allow init vendor_configs_file:file mounton;
+
+# Transitions to seclabel processes in init.rc
+domain_auto_trans(init, vendor_charger_exec, vendor_charger)
