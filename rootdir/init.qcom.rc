@@ -628,9 +628,16 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     interface android.hardware.audio@2.0::IDevicesFactory default
 
 service baseband-sh /vendor/bin/init.baseband.sh
-    class late_start
+    class main
     user root
     oneshot
+    disabled
+
+on property:init.svc.ril-daemon=restarting
+    start baseband-sh
+
+on property:init.svc.vendor.ril-daemon2=restarting
+    start baseband-sh
 
 on property:dev.bootcomplete=1
     restart ril-daemon
