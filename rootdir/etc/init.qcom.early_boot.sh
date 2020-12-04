@@ -266,6 +266,7 @@ case "$target" in
                 # Vulkan is not supported for 8917 variants
                 setprop vendor.opengles.version 196608
                 setprop persist.graphics.vulkan.disable true
+		setprop vendor.gralloc.disable_ahardware_buffer 1
                 ;;
             *)
                 setprop vendor.opengles.version 196608

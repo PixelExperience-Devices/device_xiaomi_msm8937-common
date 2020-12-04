@@ -59,7 +59,7 @@ on early-boot
     write /sys/kernel/boot_cdsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
     
-    exec -- /vendor/bin/init.qcom.early_boot.sh
+    exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
 
     # for backward compatibility
     chown system system /persist/sensors
@@ -581,7 +581,6 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
 
 on charger
     setprop persist.sys.usb.config mass_storage
-    start qcom-post-boot
 
 #Mixed HWC versions among targets
 on property:init.svc.surfaceflinger=restarting
