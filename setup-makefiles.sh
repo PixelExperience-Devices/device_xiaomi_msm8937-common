@@ -37,7 +37,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$AOSP_ROOT" true
 
 # Copyright headers and guards
-write_headers "ulysse rova santoni land"
+write_headers "ugg ugglite rolex riva santoni land"
 
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
