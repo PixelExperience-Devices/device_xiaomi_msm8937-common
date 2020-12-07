@@ -246,6 +246,45 @@
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
+    <!-- Hardware keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareKeys">83</integer>
+
+    <!-- Control the behavior when the user long presses the home button.
+          0 - Nothing
+          1 - Menu key
+          2 - Recent apps view in SystemUI
+          3 - Launch assist intent
+          4 - Voice Search
+          5 - In-app Search
+          This needs to match the constants in policy/src/com/android/internal/policy/impl/PhoneWindowManager.java -->
+    <integer name="config_longPressOnHomeBehavior">3</integer>
+
+    <!-- Control the behavior when the user long presses the app switch button.
+            0 - Nothing
+            1 - Menu key
+            2 - Recent apps view in SystemUI
+            3 - Launch assist intent
+            4 - Voice Search
+            5 - In-app Search
+            6 - Launch camera
+            7 - Sleep
+            8 - Last app
+            9 - Toggle split screen
+         This needs to match the enums in
+         sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java. -->
+    <integer name="config_longPressOnAppSwitchBehavior">1</integer>
+
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
@@ -402,8 +441,7 @@
          clocks and disable the touch controller while the display is on.
          This resource should be set to "true" when a doze component has been specified
          to maximize power savings but not all devices support it.
-         Refer to power.h for details.
-    -->
+         Refer to power.h for details. -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
@@ -417,8 +455,7 @@
 
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
-         If no value is found for the rat-name in use, the system default will be applied.
-    -->
+         If no value is found for the rat-name in use, the system default will be applied. -->
     <string-array name="config_mobile_tcp_buffers">
         <item>5gnr:2097152,6291456,16777216,512000,2097152,8388608</item>
         <item>lte:2097152,4194304,8388608,262144,524288,1048576</item>
@@ -451,8 +488,8 @@
     <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
     <bool name="config_dynamic_bind_ims">true</bool>
 
-     <!-- Boolean indicating if current platform supports HFP inband ringing -->
-     <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
+    <!-- Boolean indicating if current platform supports HFP inband ringing -->
+    <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
     in hardware. -->
@@ -510,4 +547,12 @@
          during initialization when the setting is still null. -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
+    <!-- Default value for proximity check on screen wake
+         NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms) -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
+    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
+         before setting power profiles on boot. -->
+    <bool name="config_waitForMpctlOnBoot">true</bool>
 </resources>
