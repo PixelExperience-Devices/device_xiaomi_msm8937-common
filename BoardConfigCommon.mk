@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-VENDOR_PATH := device/xiaomi/msm8937-common
+COMMON_PATH := device/xiaomi/msm8937-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -35,25 +35,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
-TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
+TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
 
-# Build
 BUILD_BROKEN_DUP_RULES := true
-
-# Kernel
-BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 ignore_loglevel
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_PAGESIZE :=  2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_SOURCE ?= kernel/xiaomi/msm8937-$(TARGET_KERNEL_VERSION)
-ifeq ($(TARGET_KERNEL_VERSION),4.9)
-BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true
-TARGET_KERNEL_CLANG_COMPILE := true
-else ifeq ($(TARGET_KERNEL_VERSION),3.18)
-TARGET_KERNEL_ARCH := arm64
-TARGET_COMPILE_WITH_MSM_KERNEL := true
-endif
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -87,7 +71,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
@@ -101,7 +85,7 @@ TARGET_TS_MAKEUP := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
-# CNE / DPM
+# CNE/DPM
 BOARD_USES_QCNE := true
 
 # Crypto
@@ -122,7 +106,7 @@ MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
+TARGET_USES_NEW_ION_API := true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_OVERLAY := true
@@ -137,10 +121,9 @@ USE_OPENGL_RENDERER := true
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Filesystem
-TARGET_USERIMAGES_USE_F2FS := true
-TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
-#FM
+# FM
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
@@ -148,17 +131,29 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
-
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
-DEVICE_MATRIX_FILE   := $(VENDOR_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit_msm8937
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_msm8937
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8937
+
+# Kernel
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 ignore_loglevel
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_PAGESIZE :=  2048
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+TARGET_KERNEL_SOURCE ?= kernel/xiaomi/msm8937-$(TARGET_KERNEL_VERSION)
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
+BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true
+TARGET_KERNEL_CLANG_COMPILE := true
+else ifeq ($(TARGET_KERNEL_VERSION),3.18)
+TARGET_KERNEL_ARCH := arm64
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+endif
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -178,6 +173,8 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USERIMAGES_USE_EXT4 := true
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
@@ -193,16 +190,11 @@ DISABLE_RILD_OEM_HOOK := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Recovery
-ifeq ($(AB_OTA_UPDATER), true)
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/fstab_AB.recovery.qcom
-else
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/fstab.recovery.qcom
-endif
 TARGET_RECOVERY_UI_BLANK_UNBLANK_ON_INIT := true
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
@@ -216,5 +208,5 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-# Inherit from the proprietary version
+# Inherit the common proprietary files
 -include vendor/xiaomi/msm8937-common/BoardConfigVendor.mk
