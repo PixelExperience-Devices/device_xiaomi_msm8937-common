@@ -212,9 +212,6 @@ vendor/lib64/libcdsp_default_listener.so|94792d75a16534ae766aba9c0d4a4a62782eac6
 vendor/lib64/libfastrpc_utf_stub.so|d19ff5b0ef7506a5d28f5825547dcf235c2f8f96
 vendor/lib64/libsysmon_cdsp_skel.so|f3cb20891b795036134a659cd530287fe8c84369
 
-# Charger
-vendor/bin/hvdcp_opti
-
 # DPM - from Daisy QKQ1.191002.002 V11.0.5.0.QDLMIXM
 framework/tcmclient.jar|6ef9ca98f67c144fc8ae941bb3a47f99cbd93098
 product/bin/dpmd|cac8f3eadeeec202f56d5b5f7a8c75e82e376d9f
