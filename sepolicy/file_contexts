@@ -12,22 +12,22 @@
 /bt_firmware                                                  u:object_r:bt_firmware_file:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service\.widevine         u:object_r:hal_drm_widevine_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey         u:object_r:hal_drm_clearkey_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.0-service\.widevine         u:object_r:hal_drm_widevine_exec:s0
+/vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey         u:object_r:hal_drm_clearkey_exec:s0
 
 # Input devices
-/(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:vendor_idc_file:s0
-/(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:vendor_keylayout_file:s0
+/vendor/usr/idc(/.*)?                         u:object_r:vendor_idc_file:s0
+/vendor/usr/keylayout(/.*)?                   u:object_r:vendor_keylayout_file:s0
 /sys/board_properties/virtualkeys.*                           u:object_r:keylayout_file_sysfs:s0
 
 # Location
 /data/vendor/location/xtra/socket_hal_xtra    u:object_r:location_socket:s0
 
 # Rild
-/(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
+/vendor/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
 
 # Sensors
 /(mnt/vendor)/persist/sensors(/.*)?                                     u:object_r:persist_sensors_file:s0
 
 # Shell Script
-/(vendor|system/vendor)/bin/init\.baseband\.sh          u:object_r:init_baseband_exec:s0
+/vendor/bin/init\.baseband\.sh          u:object_r:init_baseband_exec:s0
