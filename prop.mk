@@ -98,6 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dev.pm.dyn_samplingrate=1 \
     persist.debug.wfd.enable=1 \
     persist.demo.hdmirotationlock=false \
+    persist.graphics.vulkan.disable=true \
     persist.hwc.enable_vds=1 \
     persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=196610 \
@@ -138,7 +139,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_width=1024 \
     ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_large_cache_width=2048 \
-    ro.hwui.text_large_cache_height=1024
+    ro.hwui.text_large_cache_height=1024 \
+    ro.hwui.use_vulkan=false
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
