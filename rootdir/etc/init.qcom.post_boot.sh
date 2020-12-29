@@ -2387,20 +2387,6 @@ case "$target" in
         case "$soc_id" in
            "303" | "307" | "308" | "309" | "320" | "386" | "436")
 
-                  # Start Host based Touch processing
-                  case "$hw_platform" in
-                    "MTP" )
-			start_hbtp
-                        ;;
-                  esac
-
-                  case "$hw_platform" in
-                    "Surf" | "RCM" )
-			if [ $platform_subtype_id -ne "4" ]; then
-			    start_hbtp
-		        fi
-                        ;;
-                  esac
                 # Apply Scheduler and Governor settings for 8917 / 8920
 
                 echo 20000000 > /proc/sys/kernel/sched_ravg_window
