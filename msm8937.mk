@@ -117,9 +117,9 @@ PRODUCT_PACKAGES += \
     copybit.msm8937 \
     gralloc.msm8937 \
     hwcomposer.msm8937 \
-    libdisplayconfig \
+    libdisplayconfig.qti.vendor \
     liboverlay \
-    libqdMetaData.system \
+    libqdMetaData \
     libgenlock \
     libtinyxml \
     memtrack.msm8937
@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    vendor.display.config@1.1_vendor
+    vendor.display.config@2.0.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
