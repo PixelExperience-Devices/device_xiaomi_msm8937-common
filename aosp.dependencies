@@ -1,8 +1,8 @@
 [
   {
-    "remote":      "pixel-devices-blobs",
-    "repository":  "vendor_xiaomi_msm8937-common",
+    "remote": "pixel-devices-blobs",
+    "repository": "vendor_xiaomi_msm8937-common",
     "target_path": "vendor/xiaomi/msm8937-common",
-    "branch":      "ten"
+    "branch": "eleven"
   }
 ]
