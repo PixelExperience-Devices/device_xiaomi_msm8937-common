@@ -87,10 +87,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.enable_fb_ubwc=1 \
     debug.mdpcomp.logs=0 \
     debug.sf.disable_backpressure=1 \
+    debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=0 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.recomputecrop=0 \
     dev.pm.dyn_samplingrate=1 \
+    persist.debug.wfd.enable=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
     persist.hwc.mdpcomp.enable=true \
@@ -151,7 +153,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.disable.split.mode=1 \
     vendor.vidc.enc.disable.pq=true \
     vendor.vidc.enc.disable_bframes=1 \
-    vendor.vidc.enc.narrow.searchrange=1
+    vendor.vidc.enc.narrow.searchrange=1 \
+    vendor.video.disable.ubwc=1
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
